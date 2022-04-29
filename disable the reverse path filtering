@@ -1,0 +1,9 @@
+The reverse-path-filtering command determines whether incoming packets with a source address that cannot be routed by that interface are accepted and processed. 
+
+sysctl -w “net.ipv4.conf.default.rp_filter=0”
+sysctl -w “net.ipv4.conf.all.rp_filter=0”
+-------------------------------
+echo ‘net.ipv4.conf.eth0.rp_filter = 0’ >> /etc/sysctl.conf
+echo ‘net.ipv4.conf.eth1.rp_filter = 0’ >> /etc/sysctl.conf
+echo ‘net.ipv4.conf.lo.rp_filter = 0’ >> /etc/sysctl.conf
+sysctl -p
